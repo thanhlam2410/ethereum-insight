@@ -1,0 +1,23 @@
+{
+  "name": "ethereum-insight",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thanhlam2410/ethereum-insight.git"
+  },
+  "author": "missinglttt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thanhlam2410/ethereum-insight/issues"
+  },
+  "homepage": "https://github.com/thanhlam2410/ethereum-insight#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "request": "^2.85.0"
+  }
+}
