@@ -18,6 +18,8 @@
   "homepage": "https://github.com/thanhlam2410/ethereum-insight#readme",
   "dependencies": {
     "express": "^4.16.3",
+    "lokijs": "^1.5.3",
+    "mongodb": "^3.0.5",
     "request": "^2.85.0"
   }
 }
