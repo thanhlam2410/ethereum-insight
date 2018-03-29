@@ -12,7 +12,7 @@ if (cluster.isMaster) {
     express.listen(config.port);
     console.log("application runs on " + config.port);
 } else {
-    console.log("worker process");
-    let workerProcess = require("./src/worker");
-    workerProcess.runWorkerProcess();
+    //console.log("worker process");
+    //let workerProcess = require("./src/worker");
+    //workerProcess.runWorkerProcess();
 }

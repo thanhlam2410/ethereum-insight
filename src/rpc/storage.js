@@ -1,8 +1,20 @@
-let memdb = require("./memdb");
 let mongodb = require("./mongodb");
+let lodash = require("lodash");
+let config = require("../config");
 
 const COLLECTIONS = {
     Temp: "temp"
+}
+
+let mongodbClient = new mongodb.MongoConnection();
+
+function connect() {
+    return mongodb.connect(config.database).then(connection => {
+        mongodbClient = connection;
+        return Promise.resolve(true);
+    }).catch(err => {
+        return Promise.reject(err);
+    });
 }
 
 function insert(query) {
@@ -172,15 +184,13 @@ function count(query) {
     });
 }
 
-async function getHighestBlock(blockNumber) {
-    let data = memdb.read("temp", {
-        "name": "currentHeight"
-    });
-
-
-}
-
 module.exports = {
-    connectDatabase: mongodb.connect,
-    getHighestBlock
+    connect,
+    buildQuery: mongodb.buildQuery,
+    insert,
+    insertMany,
+    update,
+    remove,
+    get,
+    getMany
 }

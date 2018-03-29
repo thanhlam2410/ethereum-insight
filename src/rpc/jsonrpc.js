@@ -1,4 +1,7 @@
 let request = require("request");
+let http = require("https");
+let url = require("url");
+let querystring = require("querystring");
 
 const HOST = "https://rinkeby.infura.io/WiVPEB9SF24XkZpjm4lX";
 
@@ -15,11 +18,21 @@ function getBlockNumber() {
     return send(data);
 }
 
-function getBlockByNumber(blockNumber) {
+function getBlockByNumber(blockNumber, allowFullData) {
     let data = {
         "jsonrpc": "2.0",
         "method": "eth_getBlockByNumber",
-        "params": []
+        "params": [blockNumber, allowFullData]
+    }
+
+    return send(data);
+}
+
+function getTxReceipt(txId) {
+    let data = {
+        "jsonrpc": "2.0",
+        "method": "eth_getTransactionReceipt",
+        "params": [txId]
     }
 
     return send(data);
