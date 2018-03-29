@@ -104,5 +104,6 @@ function parseBody(body) {
 
 module.exports = {
     getBlockNumber,
-    getBlockByNumber
+    getBlockByNumber,
+    getTxReceipt
 }

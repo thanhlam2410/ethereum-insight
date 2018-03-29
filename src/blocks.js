@@ -91,6 +91,11 @@ function serialize(block) {
     storage.insert(query);
 }
 
+async function parseTx(txId) {
+    let tx = await jsonrpc.getTxReceipt(txId);
+    console.log(tx);
+}
+
 function convertHexToDecimal(hex) {
     if (hex.indexOf("0x") === 0) {
         hex = hex.substring(2);
